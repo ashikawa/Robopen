@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "hubot-thecat": "^1.0.1",
-    "hubot-typetalk": "0.0.3"
+    "hubot-typetalk": "git://github.com/dragon3/hubot-typetalk.git",
+    "hubot-lgtm": "git://github.com/bouzuya/hubot-lgtm.git"
   }
 }
