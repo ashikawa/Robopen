@@ -10,5 +10,7 @@
   "hubot-rules",
   "hubot-shipit",
   "hubot-youtube",
-  "hubot-thecat"
+  "hubot-thecat",
+  "hubot-lgtm",
+  "hubot-misawa"
 ]
