@@ -5,10 +5,16 @@ module.exports = (robot) ->
     {room} = req.params;
     {monitorID, monitorURL, monitorFriendlyName, alertType, alertDetails, monitorAlertContacts} = url.parse(req.url, true).query
 
+    status = switch alertType
+        when "0" then "paused"
+        when "1" then "not checked yet"
+        when "2" then "up"
+        when "8" then "seems down"
+        when "9" then "down"
+
     robot.send {room: room}, """
-    Monitor is #{alertDetails}
+    Monitor is #{status}
     #{monitorFriendlyName} (#{monitorURL})
     """
-    res.end "OK"
 
-# http://mighty-bayou-2930.herokuapp.com/uptimerobot/8712?monitorID=11&monitorURL=example.com&monitorFriendlyName=Example&alertType=0&alertDetails=FAIL&monitorAlertContacts=Contacts
+    res.end "OK"
