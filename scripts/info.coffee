@@ -22,6 +22,6 @@ module.exports = (robot) ->
     msg.send """
     Name: #{name}
     Version: #{version}
-    Author": #{author}
+    Author: #{author}
     #{description}
     """
