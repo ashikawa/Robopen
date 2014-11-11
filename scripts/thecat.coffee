@@ -40,6 +40,6 @@ module.exports = (robot) ->
         message = ''
 
         for category in categories
-          message += $(category).find("name").text() + ',　'
+          message += $(category).find("name").text() + ', '
 
         msg.send message
