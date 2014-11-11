@@ -1,3 +1,16 @@
+# Description
+#   travisci webhook
+#
+# Dependencies:
+#   None
+# Configuration:
+#   None
+# Commands:
+#   None
+# Author:
+#   ashikawa <a.shigeru@gmail.com>
+#
+
 module.exports = (robot) ->
   robot.router.post "/travisci/:room", (req, res) ->
     envelope = room: req.params.room

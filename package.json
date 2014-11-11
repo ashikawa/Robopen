@@ -1,9 +1,9 @@
 {
-  "name": "mighty-bayou-2930",
-  "version": "0.0.0",
+  "name": "RoboPen",
+  "version": "0.4.1",
   "private": true,
-  "author": "ashikawa <ashikawa@nulab.co.jp>",
-  "description": "A simple helpful robot for your Company",
+  "author": "ashikawa <a.shigeru@gmail.com>",
+  "description": "I can fly",
   "dependencies": {
     "cheerio": "^0.18.0",
     "hubot": "^2.9.3",

@@ -1,3 +1,16 @@
+# Description
+#   uptimerobot webhook
+#
+# Dependencies:
+#   None
+# Configuration:
+#   None
+# Commands:
+#   None
+# Author:
+#   ashikawa <a.shigeru@gmail.com>
+#
+
 url = require('url');
 
 module.exports = (robot) ->
