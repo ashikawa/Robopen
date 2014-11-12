@@ -14,32 +14,41 @@
 #   hubot show me cat's categories - show cat's active categories.
 
 $ = require 'cheerio'
-baseUrl = "http://thecatapi.com/api"
+BASE_URL = "http://thecatapi.com/api"
 
 module.exports = (robot) ->
   robot.respond /cat me( (.*))?/i, (msg) ->
-    url = if msg.match[2]? then baseUrl + "/images/get?format=xml&category=" + msg.match[2] else baseUrl + "/images/get?format=xml"
+    url = "#{BASE_URL}/images/get?format=xml"
+
+    if msg.match[2]
+      url = "#{url}&category=#{msg.match[2]}"
+
     msg.http(url)
       .get() (err, res, body) ->
-        image = $(body).find("url")
-        msg.send image.text()
+        image = $(body).find('url')
+        text = image.text();
+
+        if !!text
+          msg.send text
+        else
+          msg.send "No image found. http://s.quickmeme.com/img/a8/a8022006b463b5ed9be5a62f1bdbac43b4f3dbd5c6b3bb44707fe5f5e26635b0.jpg"
 
   robot.respond /cat bomb( (\d+))?/i, (msg) ->
     count = msg.match[2] or 5
-    url = baseUrl + "/images/get?format=xml&results_per_page=" + count
+    url = "#{BASE_URL}/images/get?format=xml&results_per_page=#{count}"
     msg.http(url)
       .get() (err, res, body) ->
-        images = $(body).find("image")
-        msg.send $(image).find("url").text() for image in images
+        images = $(body).find('image')
+        msg.send $(image).find('url').text() for image in images
 
   robot.respond /show me cat's categories/i, (msg) ->
-    msg.http(baseUrl + "/categories/list")
+    msg.http(BASE_URL + "/categories/list")
       .get() (err, res, body) ->
-        categories = $(body).find("category")
+        categories = $(body).find('category')
 
-        message = ''
+        message = []
 
         for category in categories
-          message += $(category).find("name").text() + ', '
+          message.push $(category).find('name').text()
 
-        msg.send message
+        msg.send "Cat's categories: #{message.join(', ')}"
