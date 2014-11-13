@@ -4,7 +4,7 @@
 # Dependencies:
 #
 # Configuration:
-#   None
+#   BOOT_MESSAGE_TO : optional, room id to send reboot message
 #
 # Commands:
 #   hubot show your info - show robo version
@@ -19,7 +19,7 @@ infomation = require path.resolve(__dirname, '../package.json')
 module.exports = (robot) ->
 
   if process.env.BOOT_MESSAGE_TO?
-    robot.send room: BOOT_MESSAGE_TO, "robo rebooted !!"
+    robot.send room: process.env.BOOT_MESSAGE_TO, "robo rebooted !!"
 
   robot.respond /show your info/i, (msg) ->
     {name, version, author, description} = infomation
