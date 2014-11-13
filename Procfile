@@ -1,1 +1,1 @@
-web: bin/hubot -a typetalk -n robo
+web: bin/hubot -a typetalk -n @robo
