@@ -1,12 +1,13 @@
 [
   "hubot-diagnostics",
+  "hubot-google-images",
   "hubot-help",
   "hubot-heroku-keepalive",
-  "hubot-google-images",
+  "hubot-lgtm",
+  "hubot-magnum-ci",
+  "hubot-misawa",
   "hubot-redis-brain",
   "hubot-rules",
   "hubot-shipit",
-  "hubot-youtube",
-  "hubot-lgtm",
-  "hubot-misawa"
+  "hubot-youtube"
 ]
