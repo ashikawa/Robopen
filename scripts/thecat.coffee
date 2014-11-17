@@ -26,12 +26,13 @@ module.exports = (robot) ->
     msg.http(url)
       .get() (err, res, body) ->
         image = $(body).find('url')
-        text = image.text();
+        text = image.text()
 
         if !!text
           msg.send text
         else
-          msg.send "No image found. http://s.quickmeme.com/img/a8/a8022006b463b5ed9be5a62f1bdbac43b4f3dbd5c6b3bb44707fe5f5e26635b0.jpg"
+          msg.send "No image found. " +
+              "https://servicechampions.com/wp-content/uploads/404cat.jpg"
 
   robot.respond /cat bomb( (\d+))?/i, (msg) ->
     count = msg.match[2] or 5
