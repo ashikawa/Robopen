@@ -1,24 +1,26 @@
 {
   "name": "robo-pen",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "private": true,
   "author": "ashikawa <a.shigeru@gmail.com>",
   "description": "I can fly",
   "dependencies": {
     "cheerio": "^0.18.0",
+    "gulp": "^3.8.10",
+    "gulp-coffeelint": "^0.4.0",
     "hubot": "^2.9.3",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.1.0",
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "0.0.4",
+    "hubot-lgtm": "git://github.com/bouzuya/hubot-lgtm.git",
     "hubot-misawa": "0.0.3",
     "hubot-redis-brain": "0.0.2",
     "hubot-rules": "^0.1.0",
     "hubot-scripts": "^2.5.16",
     "hubot-shipit": "^0.1.1",
-    "hubot-youtube": "^0.1.2",
     "hubot-typetalk": "git://github.com/dragon3/hubot-typetalk.git#nubot",
-    "hubot-lgtm": "git://github.com/bouzuya/hubot-lgtm.git"
+    "hubot-youtube": "^0.1.2"
   },
   "engines": {
     "node": "0.10.x"

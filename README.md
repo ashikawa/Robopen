@@ -4,21 +4,21 @@
 
     % npm install
 
-
 ### Running Locally
 
     % ./bin/hubot
 
+### Test
+
+    node_modules/gulp/bin/gulp.js --require coffee-script test
 
 ## Deployment
 
     % git push heroku master
 
-
 ## Heroku
 
 You may want to get comfortable with `heroku logs` and `heroku restart`
-
 
 ## Docmentation
 
