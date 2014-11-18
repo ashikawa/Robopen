@@ -19,6 +19,8 @@ module.exports = (robot) ->
     {ID, URL, name, type, details, contacts} =
         url.parse(req.url, true).query
 
+    return unless ID?
+
     status = switch type
       when '0' then 'paused'
       when '1' then 'not checked yet'
