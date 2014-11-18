@@ -14,13 +14,16 @@
 #
 
 path = require 'path'
-infomation = require path.resolve(__dirname, '../package.json')
-rooms = process.env.HUBOT_REBOOT_MESSAGE_ROOMS.split(",")
+infomation = require path.resolve __dirname, '../package.json'
 
 module.exports = (robot) ->
+  if process.env.HUBOT_REBOOT_MESSAGE_ROOMS?
+    rooms = process.env.HUBOT_REBOOT_MESSAGE_ROOMS.split ','
 
-  rooms.forEach (room, i) ->
-    robot.send room: room, "Robo rebooted !!"
+    rooms.forEach (room, i) ->
+      robot.send room: room, "Robo rebooted !!"
+  else
+    robot.send {}, "Robo rebooted !!"
 
   robot.respond /show your info/i, (msg) ->
     {name, version, author, description} = infomation

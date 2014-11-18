@@ -14,7 +14,6 @@
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "0.0.4",
     "hubot-lgtm": "git://github.com/bouzuya/hubot-lgtm.git",
-    "hubot-magnum-ci": "^0.1.1",
     "hubot-misawa": "0.0.3",
     "hubot-redis-brain": "0.0.2",
     "hubot-rules": "^0.1.0",
@@ -27,5 +26,9 @@
     "node": "0.10.x"
   },
   "devDependencies": {
+  },
+  "scripts": {
+    "start": "hubot -a typetalk -n @robo",
+    "test": "gulp --require coffee-script test"
   }
 }

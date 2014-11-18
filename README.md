@@ -10,11 +10,11 @@
 
 ### Test
 
-    node_modules/gulp/bin/gulp.js --require coffee-script test
+    npm test
 
 ## Deployment
 
-    % git push heroku master
+    % git push master
 
 ## Heroku
 
