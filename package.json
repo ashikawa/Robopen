@@ -1,9 +1,9 @@
 {
   "name": "robo-pen",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "private": true,
   "author": "ashikawa <a.shigeru@gmail.com>",
-  "description": "I can fly",
+  "description": "I can fly more faster.",
   "dependencies": {
     "cheerio": "^0.18.0",
     "gulp": "^3.8.10",
@@ -19,7 +19,7 @@
     "hubot-rules": "^0.1.0",
     "hubot-scripts": "^2.5.16",
     "hubot-shipit": "^0.1.1",
-    "hubot-typetalk": "git://github.com/dragon3/hubot-typetalk.git#nubot",
+    "hubot-typetalk": "git://github.com/nulab/hubot-typetalk.git#streaming-support",
     "hubot-youtube": "^0.1.2"
   },
   "engines": {
