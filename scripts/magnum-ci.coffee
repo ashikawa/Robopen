@@ -33,7 +33,10 @@ module.exports = (robot) ->
 
         user.type = payload.type if payload.type
 
-        robot.send user, "#{payload.title}"
+        robot.send user, """
+        #{payload.title}
+        #{payload.build_url}
+        """
 
       catch error
         console.log "magnum-ci hook error: #{error}. " +
