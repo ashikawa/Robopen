@@ -6,8 +6,6 @@
   "description": "I can fly more faster.",
   "dependencies": {
     "cheerio": "^0.18.0",
-    "gulp": "^3.8.10",
-    "gulp-coffeelint": "^0.4.0",
     "hubot": "^2.9.3",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.1.0",
@@ -25,7 +23,11 @@
   "engines": {
     "node": "0.10.x"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "coffee-script": "^1.8.0",
+    "gulp": "^3.8.10",
+    "gulp-coffee": "^2.2.0"
+  },
   "scripts": {
     "start": "hubot -a typetalk -n @robo",
     "test": "gulp --require coffee-script test"
