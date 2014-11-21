@@ -10,14 +10,14 @@
 #
 # Commands:
 #   hubot cat me <category> - Receive a cat
-#   hubot cat bomb N - get N cats
+#   hubot cat bomb N <category> - get N cats
 #   hubot show me cat's categories - show cat's active categories.
 
 $ = require 'cheerio'
 BASE_URL = "http://thecatapi.com/api"
 
 module.exports = (robot) ->
-  robot.respond /cat me( (.*))?/i, (msg) ->
+  robot.respond /cats? me( (.*))?/i, (msg) ->
     url = "#{BASE_URL}/images/get?format=xml"
 
     if msg.match[2]
@@ -34,9 +34,13 @@ module.exports = (robot) ->
           msg.send "No image found. " +
               "https://servicechampions.com/wp-content/uploads/404cat.jpg"
 
-  robot.respond /cat bomb( (\d+))?/i, (msg) ->
+  robot.respond /cats? bomb( (\d+))?( (.*))?/i, (msg) ->
     count = msg.match[2] or 5
     url = "#{BASE_URL}/images/get?format=xml&results_per_page=#{count}"
+
+    if msg.match[4]
+      url = "#{url}&category=#{msg.match[4]}"
+
     msg.http(url)
       .get() (err, res, body) ->
         images = $(body).find('image')

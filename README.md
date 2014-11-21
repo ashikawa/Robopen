@@ -26,3 +26,4 @@ You may want to get comfortable with `heroku logs` and `heroku restart`
 - [hubot]: http://hubot.github.com
 - [generator-hubot]: https://github.com/github/generator-hubot
 - [coffeescript]: http://coffeescript.org/
+- [hubot-typetalk]: https://github.com/nulab/hubot-typetalk
