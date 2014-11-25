@@ -44,7 +44,12 @@ module.exports = (robot) ->
     msg.http(url)
       .get() (err, res, body) ->
         images = $(body).find('image')
-        msg.send $(image).find('url').text() for image in images
+
+        if images.length
+          msg.send $(image).find('url').text() for image in images
+        else
+          msg.send "No image found. " +
+            "https://servicechampions.com/wp-content/uploads/404cat.jpg"
 
   robot.respond /show me cat's categories/i, (msg) ->
     msg.http(BASE_URL + "/categories/list")
