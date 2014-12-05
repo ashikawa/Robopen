@@ -27,7 +27,9 @@
   "engines": {
     "node": "0.10.x"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "opts": "^1.2.2"
+  },
   "scripts": {
     "start": "hubot -a typetalk -n @robo",
     "test": "gulp --require coffee-script test"
