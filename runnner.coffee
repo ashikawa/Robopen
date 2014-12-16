@@ -1,3 +1,5 @@
+# coffee runnner.coffee -s ./scripts/thecat.coffee -m "Hubot cat me"
+
 opts = require 'opts'
 TextMessage = require("hubot/src/message").TextMessage
 
@@ -34,5 +36,9 @@ robot.adapter.on 'send', (envelope, strings) ->
 
 message = opts.get 'message'
 
-console.log "You: #{message}"
+console.log "You  : #{message}"
 robot.adapter.receive new TextMessage {}, message
+
+setTimeout ->
+  robot.shutdown()
+, 1000
