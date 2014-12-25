@@ -15,7 +15,7 @@ module.exports = (robot) ->
     envelope = room: req.params.room
 
     {title, description, pubDate, content, link, raw, guid} =
-      JSON.parse req.body
+      req.body
 
     robot.send envelope, """
     New item in feed.
