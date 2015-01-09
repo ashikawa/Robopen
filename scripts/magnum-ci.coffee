@@ -16,11 +16,11 @@
 #   POST /hubot/magnum-ci
 #     - process the standard payload parameter
 
-url = require('url')
+url = require 'url'
 
 rooms = []
 if process.env.HUBOT_DEV_ROOMS?
-  rooms = process.env.HUBOT_DEV_ROOMS.split(',')
+  rooms = process.env.HUBOT_DEV_ROOMS.split ','
 
 module.exports = (robot) ->
   robot.router.post '/hubot/magnum-ci', (req, res) ->
@@ -34,7 +34,8 @@ module.exports = (robot) ->
         user.type = payload.type if payload.type
 
         robot.send user, """
-        #{payload.title} ( #{payload.build_url} )
+        #{payload.title}
+        #{payload.build_url}
         """
 
       catch error

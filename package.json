@@ -12,6 +12,7 @@
     "gulp-coffeelint": "^0.4.0",
     "hubot": "^2.9.3",
     "hubot-diagnostics": "0.0.1",
+    "hubot-digweb": "^0.1.3",
     "hubot-google-images": "^0.1.0",
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "0.0.4",
