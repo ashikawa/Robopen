@@ -20,7 +20,7 @@ url = require 'url'
 
 rooms = []
 if process.env.HUBOT_DEV_ROOMS?
-  rooms = process.env.HUBOT_DEV_ROOMS.split ','
+  rooms = process.env.HUBOT_DEV_ROOMS.split(',')
 
 module.exports = (robot) ->
   robot.router.post '/hubot/magnum-ci', (req, res) ->
