@@ -16,14 +16,14 @@
 #   POST /hubot/magnum-ci
 #     - process the standard payload parameter
 
-url = require('url')
+url = require 'url'
 
 rooms = []
 if process.env.HUBOT_DEV_ROOMS?
-  rooms = process.env.HUBOT_DEV_ROOMS.split(",")
+  rooms = process.env.HUBOT_DEV_ROOMS.split ','
 
 module.exports = (robot) ->
-  robot.router.post "/hubot/magnum-ci", (req, res) ->
+  robot.router.post '/hubot/magnum-ci', (req, res) ->
     rooms.forEach (room, i) ->
       try
         payload = JSON.parse req.body.payload

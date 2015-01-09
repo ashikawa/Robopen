@@ -19,7 +19,8 @@ module.exports = (robot) ->
 
     robot.send envelope, """
     New item in feed.
-    #{title} ( #{link} )
+    #{title}
+    #{link}
     """
 
     res.end "OK"
