@@ -27,17 +27,12 @@ module.exports = (robot) ->
     rooms.forEach (room, i) ->
       try
         payload = JSON.parse req.body.payload
-
-        user =
-          room: room
-
+        user = room: room
         user.type = payload.type if payload.type
-
         robot.send user, """
         #{payload.title}
         #{payload.build_url}
         """
-
       catch error
         console.log "magnum-ci hook error: #{error}. " +
           "Payload: #{req.body.payload}"
