@@ -16,7 +16,8 @@ url = require 'url'
 module.exports = (robot) ->
   robot.router.get "/uptimerobot/:room", (req, res) ->
     envelope = room: req.params.room
-    {monitorID, monitorURL, monitorFriendlyName, alertType, alertDetails, monitorAlertContacts} =
+    {monitorID, monitorURL, monitorFriendlyName, alertType, alertDetails} =
+    # monitorAlertContacts
         url.parse(req.url, true).query
 
     unless monitorID?
