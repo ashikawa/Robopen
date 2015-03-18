@@ -16,12 +16,14 @@ url = require 'url'
 module.exports = (robot) ->
   robot.router.get "/uptimerobot/:room", (req, res) ->
     envelope = room: req.params.room
-    {ID, URL, name, type, details, contacts} =
+    {monitorID, monitorURL, monitorFriendlyName, alertType, alertDetails, monitorAlertContacts} =
         url.parse(req.url, true).query
 
-    return unless ID?
+    unless monitorID?
+      res.end "OK"
+      return
 
-    status = switch type
+    status = switch alertType
       when '0' then 'paused'
       when '1' then 'not checked yet'
       when '2' then 'up'
@@ -30,7 +32,7 @@ module.exports = (robot) ->
 
     robot.send envelope, """
     Monitor is #{status}
-    #{name} (#{URL})
+    #{monitorFriendlyName} (#{monitorURL})
     """
 
     res.end "OK"
